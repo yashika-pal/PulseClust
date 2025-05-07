@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prediction Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cluster Prediction Result</h1>
+
+      <div class="result-box">
+        <p class="result-label">Predicted Cluster:</p>
+        <p class="result-value">{{ cluster }}</p>
+
+        <p class="result-label">Prediction Strength:</p>
+        <p class="result-value">{{ "%.2f"|format(strength * 100) }}%</p>
+
+        <a href="/" class="back-btn">New Prediction</a>
+      </div>
+    </div>
+  </body>
+</html>

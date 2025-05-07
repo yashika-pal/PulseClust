@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Radar Pulse Cluster Predictor</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Radar Pulse Analysis</h1>
+      <form method="POST">
+        <div class="form-group">
+          <label for="TOA">TOA (Time of Arrival):</label>
+          <input type="number" step="0.0001" name="TOA" required />
+        </div>
+
+        <div class="form-group">
+          <label for="PRI">PRI (Pulse Repetition Interval):</label>
+          <input type="number" step="0.0001" name="PRI" required />
+        </div>
+
+        <div class="form-group">
+          <label for="Frequency">Frequency:</label>
+          <input type="number" step="0.0001" name="Frequency" required />
+        </div>
+
+        <div class="form-group">
+          <label for="Amplitude">Amplitude:</label>
+          <input type="number" step="0.0001" name="Amplitude" required />
+        </div>
+
+        <button type="submit">Predict Cluster</button>
+      </form>
+    </div>
+  </body>
+</html>
