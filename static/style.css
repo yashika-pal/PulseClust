@@ -1,68 +1,149 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #1f1c2c, #928dab);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
+/* Container */
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: #2c2f48;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+  animation: fadeIn 1s ease;
 }
 
+h1 {
+  text-align: center;
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+/* Form styles */
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #eee;
+  font-weight: bold;
 }
 
 input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  color: #333;
+  outline: none;
+  transition: 0.3s ease;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+input[type="number"]:focus {
+  background-color: #fffbe6;
+  border: 2px solid #ffd700;
 }
 
+/* Submit button */
+button[type="submit"] {
+  background-color: #ffd700;
+  color: #1f1c2c;
+  font-weight: bold;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #ffea00;
+}
+
+button[type="submit"]:active {
+  animation: bounce 0.3s ease;
+}
+
+/* Result box */
 .result-box {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-top: 20px;
+  background-color: #3c3f66;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  animation: flipIn 0.8s ease-in-out;
 }
 
 .result-label {
-    font-weight: bold;
-    color: #333;
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-top: 1rem;
 }
 
 .result-value {
-    font-size: 1.2em;
-    color: #4CAF50;
-    margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #ffd700;
+  font-weight: bold;
 }
 
+/* Back button */
 .back-btn {
-    display: inline-block;
-    margin-top: 20px;
-    text-decoration: none;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 4px;
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.4rem;
+  background-color: #ffd700;
+  color: #1f1c2c;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #ffea00;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flipIn {
+  from { transform: rotateY(90deg); opacity: 0; }
+  to { transform: rotateY(0); opacity: 1; }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
 }

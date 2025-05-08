@@ -7,6 +7,32 @@
       href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
+  <script>
+  window.onload = () => {
+    for (let i = 0; i < 30; i++) {
+      const emoji = document.createElement('div');
+      emoji.innerText = ['🎉', '🎯', '✨', '🔥'][Math.floor(Math.random() * 4)];
+      emoji.style.position = 'fixed';
+      emoji.style.left = Math.random() * window.innerWidth + 'px';
+      emoji.style.top = '-30px';
+      emoji.style.fontSize = '24px';
+      emoji.style.zIndex = 9999;
+      emoji.style.pointerEvents = 'none';
+      emoji.style.animation = `fall ${2 + Math.random() * 2}s ease-in forwards`;
+      document.body.appendChild(emoji);
+    }
+  };
+</script>
+
+<style>
+  @keyframes fall {
+    to {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+</style>
+
   <body>
     <div class="container">
       <h1>Cluster Prediction Result</h1>
